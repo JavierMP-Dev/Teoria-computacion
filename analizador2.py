@@ -51,9 +51,9 @@ def analizador_lexico(cadena, tabla):
             return "Error léxico"
 
         estado = tabla[(estado, entrada)]
-        print(f"✅ Nuevo estado: {estado}")
+        print(f" Nuevo estado: {estado}")
 
-    print("🎉 Cadena aceptada")
+   
     return "Cadena aceptada"
 
 
@@ -62,10 +62,10 @@ nombre_archivo = "tabla.txt"
 tabla = leer_tabla_desde_archivo(nombre_archivo)
 
 # Probar con una cadena tabla 1
-cadena = "123.45E+6"
+#cadena = "123.45E+6"
 
 # Probar con una cadena tabla 2
-#cadena = "12.34E+5" 
+cadena = "12.34E+5" 
 
 
 # Probar con una cadena tabla 3
