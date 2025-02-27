@@ -34,7 +34,7 @@ def analizador_lexico(cadena, tabla):
 
     while estado != "aceptar":
         if estado == "error":
-            print(f"❌ Error léxico en el carácter '{cadena[i-1]}' (posición {i-1})")
+            print(f"Error léxico en el carácter '{cadena[i-1]}' (posición {i-1})")
             return "Error léxico"
 
         if i < len(cadena):
@@ -44,10 +44,10 @@ def analizador_lexico(cadena, tabla):
             simbolo = ""
 
         entrada = clasificar_simbolo(simbolo)
-        print(f"🧐 Procesando '{simbolo}' → Clasificado como: {entrada}")
+        print(f" '{simbolo}' →  {entrada}")
 
         if entrada == "error" or (estado, entrada) not in tabla:
-            print(f"❌ No hay transición para (estado {estado}, entrada '{entrada}')")
+            print(f"No hay transición para (estado {estado}, entrada '{entrada}')")
             return "Error léxico"
 
         estado = tabla[(estado, entrada)]
@@ -58,20 +58,21 @@ def analizador_lexico(cadena, tabla):
 
 
 # Cargar tabla de transiciones desde archivo
-nombre_archivo = "tabla.txt"
+nombre_archivo = "tabla4.txt"
 tabla = leer_tabla_desde_archivo(nombre_archivo)
 
 # Probar con una cadena tabla 1
 #cadena = "123.45E+6"
 
-# Probar con una cadena tabla 2
-cadena = "12.34E+5" 
+# Probar con una cadena tabla 2: detecta numeros decimales
+#cadena = "12.34" 
 
 
-# Probar con una cadena tabla 3
-#cadena = "110011"
+# Probar con una cadena tabla 3: detecta variables validas
+#cadena = "hola1"
+#cadena = "1Hola"
 
-# Probar con una cadena tabla 4
-#cadena = "+"
+# Probar con una cadena tabla 4: detecta operadores matematicos
+cadena = "+"
 
 print(analizador_lexico(cadena, tabla))

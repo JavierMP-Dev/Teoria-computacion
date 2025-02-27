@@ -1,0 +1,4 @@
+letra digito _ FDC
+1 2 error 3 error
+2 2 2 2 aceptar
+3 2 error 3 error

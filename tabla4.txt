@@ -1,0 +1,3 @@
++ - * / FDC
+1 2 2 2 2 error
+2 error error error error aceptar
