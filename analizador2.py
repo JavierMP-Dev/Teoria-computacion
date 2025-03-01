@@ -58,12 +58,12 @@ def analizador_lexico(cadena, tabla):
 
 
 # Cargar tabla de transiciones desde archivo
-nombre_archivo = "tabla3.txt"
+nombre_archivo = "tabla4.txt"
 tabla = leer_tabla_desde_archivo(nombre_archivo)
 
 # Probar con una cadena tabla 1
 #cadena = "123.45E+6"
-
+cadena = input("Ingresa la cadena--->")
 # Probar con una cadena tabla 2: detecta numeros decimales
 #cadena = "12.34" 
 
@@ -73,6 +73,6 @@ tabla = leer_tabla_desde_archivo(nombre_archivo)
 #cadena = "1Hola"
 
 # Probar con una cadena tabla 4: detecta operadores matematicos
-cadena = "1hola1"
+cadena = "+"
 
 print(analizador_lexico(cadena, tabla))
